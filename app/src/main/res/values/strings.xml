@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DynamicUI</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="fragment_text">This is a fragment</string>
+</resources>
