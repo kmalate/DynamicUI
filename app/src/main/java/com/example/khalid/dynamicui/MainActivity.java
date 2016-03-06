@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArticleFragment articleFragment = (ArticleFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.article_fragment);
+        articleFragment.updateArticleView(0);
     }
 
     @Override
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openFlexibleActivity(View view) {
         Intent intent = new Intent(this, FlexibleActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCommunicatingActivity(View view) {
+        Intent intent = new Intent(this, Communicating.class);
         startActivity(intent);
     }
 }

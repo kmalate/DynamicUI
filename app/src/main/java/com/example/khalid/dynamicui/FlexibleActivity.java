@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
-public class FlexibleActivity extends FragmentActivity {
+public class FlexibleActivity extends FragmentActivity
+    implements HeadlinesFragment.OnHeadlineSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,8 @@ public class FlexibleActivity extends FragmentActivity {
         // Create fragment and give it an argument specifying the article it should show
         ArticleFragment newFragment = new ArticleFragment();
         Bundle args = new Bundle();
-        //args.putInt(ArticleFragment.ARG_POSITION, position);
+        args.putInt(ArticleFragment.ARG_POSITION, 0);
+        newFragment.setArguments(args);
 
         android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // Replace whatever is in the fragment_container view with this fragment,
@@ -50,5 +52,10 @@ public class FlexibleActivity extends FragmentActivity {
 
         //Commit the transaction
         transaction.commit();
+    }
+
+    @Override
+    public void onArticleSelected(int position) {
+
     }
 }
